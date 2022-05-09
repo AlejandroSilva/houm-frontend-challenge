@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import cn from 'classnames'
 import { Chip } from './Chip'
-import { GENDER_COLOR, SPECIES_COLOR } from '../utils/constants'
+import { GENDER_COLOR, PERSONALITY_COLOR, SPECIES_COLOR } from '../utils/constants'
 
 interface VillagerCardProps {
   classname?: string
@@ -28,11 +28,9 @@ export const VillagerCard: FC<VillagerCardProps> = (props) => {
             {name}
           </h3>
           <div>
+            <Chip color={PERSONALITY_COLOR[personality]}>{personality}</Chip>
             <Chip color={SPECIES_COLOR[specie]}>{specie}</Chip>
             <Chip color={GENDER_COLOR[gender]}>{gender}</Chip>
-          </div>
-          <div>
-            {personality}
           </div>
           {quote && (
             <>

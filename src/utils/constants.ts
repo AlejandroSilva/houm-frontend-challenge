@@ -42,3 +42,14 @@ export const SPECIES_COLOR: ColorsMap = {
   'Octopus': '#cb97ec',
   'Monkey': '#7aa0d3',
 }
+
+export const PERSONALITY_COLOR: ColorsMap = {
+  'Jock': '#769efe',
+  'Cranky': '#80b0ff',
+  'Peppy': '#cfb7ff',
+  'Big sister': '#ffa8ed',
+  'Lazy': '#ffbaa8',
+  'Normal': '#a8ffba',
+  'Snooty': '#d8ff6e',
+  'Smug': '#edffa8',
+}
