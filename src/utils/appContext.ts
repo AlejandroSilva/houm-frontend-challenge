@@ -6,7 +6,11 @@ export type NookpediaFilters = {
 
 type AppContent = {
   filters: NookpediaFilters
-  filterByName: (name: string) => void
+  filterBy: (filters: NookpediaFilters) => void
+}
+
+export const defaultFilters: NookpediaFilters = {
+  name: ''
 }
 
 // @ts-ignore // we don't need to pass the default value as isn't used outside a Provider

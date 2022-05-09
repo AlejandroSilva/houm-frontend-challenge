@@ -11,6 +11,7 @@ export const Villagers: FC = () => {
   const { filters } = useAppContext()
   const { data, error, status, fetch: fetchAllVillagers } = usePromise(getVillagers)
 
+  // When the filters of AppContext change, then a new Api request is made
   useEffect(() => {
     console.log('useEffect', filters)
     fetchAllVillagers(filters)
