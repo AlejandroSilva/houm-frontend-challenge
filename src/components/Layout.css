@@ -1,5 +1,6 @@
 .layout {
-    background-image: url(assets/play-dots.png);
+    /*noinspection CssUnknownTarget*/
+    background-image: url(/play-dots.png);
     background-color: var(--h-gray-50);
     background-size: 32px 32px;
     min-height: 100vh;
