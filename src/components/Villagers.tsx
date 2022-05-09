@@ -2,6 +2,7 @@ import { FC, useEffect } from 'react'
 
 import { usePromise } from '../utils/hooks/usePromise'
 import { getVillagers } from '../api/nookpedia'
+import { InfoBox } from './InfoBox'
 
 export const Villagers: FC = () => {
   const { data, error, status, fetch: fetchAllVillagers } = usePromise(getVillagers)
@@ -13,7 +14,15 @@ export const Villagers: FC = () => {
   return (
     <section className='container'>
       {status==='PENDING' && (
-        <p>loading</p>
+        <InfoBox>
+          <h1>Buscando...</h1>
+        </InfoBox>
+      )}
+      {status==='DONE' && data.length===0 && (
+        <InfoBox>
+          <h1>¡Lo sentimos! No hay Aldeanos con esas características</h1>
+          <p>intenta con cambiando los filtros de busqueda</p>
+        </InfoBox>
       )}
       {status==='DONE' && (
         data.map((villager, i) => (

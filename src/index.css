@@ -1,5 +1,4 @@
-@import "./components/Layout.css";
-@import "./components/NavBar.css";
+@import "./components/index.css";
 
 body {
   margin: 0;
