@@ -1,0 +1,13 @@
+/*
+one way to define the color as variable, is a set a default css variable, and override it with
+the style property when needed.
+*/
+
+.chip {
+  display: inline-block;
+  --chip-color: var(--h-gray-100);
+  background-color: var(--chip-color);
+  border-radius: .75rem;
+  padding: .25rem .5rem;
+  font-size: .75rem;
+}

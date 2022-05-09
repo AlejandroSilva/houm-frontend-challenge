@@ -7,11 +7,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Houm Palette */
+  /* extracted Houm Palette */
   --h-white: #FFFFFF;
   --h-primary: #FF452B;
   /* bg */
   --h-gray-50: #F7F8FC;
+  --h-gray-100: #ECEFF1;
   --h-gray: #BDBDBD;
   --h-gray-900: #9E9E9E;
   /* font */
