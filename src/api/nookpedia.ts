@@ -9,6 +9,9 @@ export type Villager = {
   name: string
   gender: 'Female' | 'Male'
   image_url: string
+  species: string
+  personality: string
+  quote?: string
 }
 
 export type Villagers = Array<Villager>

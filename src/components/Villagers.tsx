@@ -35,6 +35,10 @@ export const Villagers: FC = () => {
               key={i}
               name={villager.name}
               imageUrl={villager.image_url}
+              specie={villager.species}
+              gender={villager.gender}
+              personality={villager.personality}
+              quote={villager.quote}
             />
           ))}
         </div>
