@@ -24,7 +24,7 @@ export const Villagers: FC = () => {
       {status==='DONE' && data.length===0 && (
         <InfoBox>
           <h1>¡Lo sentimos! No hay Aldeanos con esas características</h1>
-          <p>intenta con cambiando los filtros de busqueda</p>
+          <p>Intenta con cambiando los filtros de busqueda</p>
         </InfoBox>
       )}
       {status==='DONE' &&
@@ -40,7 +40,10 @@ export const Villagers: FC = () => {
         </div>
       }
       {status==='ERROR' && (
-        <p>an error</p>
+        <InfoBox>
+          <h1>¡Lo sentimos! Ocurrio un error inesperado</h1>
+          <p>Por favor intenta nuevamente en unos minutos</p>
+        </InfoBox>
       )}
     </section>
   )
