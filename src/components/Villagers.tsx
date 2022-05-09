@@ -1,5 +1,6 @@
 import { FC, useEffect } from 'react'
 
+import { useAppContext } from '../utils/appContext'
 import { usePromise } from '../utils/hooks/usePromise'
 import { getVillagers } from '../api/nookpedia'
 import { InfoBox } from './InfoBox'
@@ -7,11 +8,13 @@ import { VillagerCard } from './VillagerCard'
 import { Spinner } from './Spinner'
 
 export const Villagers: FC = () => {
+  const { filters } = useAppContext()
   const { data, error, status, fetch: fetchAllVillagers } = usePromise(getVillagers)
 
   useEffect(() => {
-    fetchAllVillagers()
-  }, [])
+    console.log('useEffect', filters)
+    fetchAllVillagers(filters)
+  }, [filters])
 
   return (
     <section className='container'>

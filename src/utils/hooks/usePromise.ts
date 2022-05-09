@@ -40,7 +40,7 @@ export const usePromise = <Result>(asyncMethod: AsyncMethod<Result>) : UsePromis
 
   const fetch = (...args: any[]) => {
     dispatch(pendingAction())
-    return asyncMethod([...args])
+    return asyncMethod(...args)
       .then(res => {
         dispatch(doneAction(res))
         return res
