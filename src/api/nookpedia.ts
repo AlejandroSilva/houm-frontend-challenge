@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 const API_KEY = 'c9415c39-f928-4d3f-b57a-8e3d45438189'
 // const VILLAGERS_ENDPOINT = 'https://api.nookipedia.com/villagers?species=cow'
 const ENDPOINT = 'https://api.nookipedia.com/villagers'
@@ -12,7 +14,12 @@ export type Villager = {
 export type Villagers = Array<Villager>
 
 export const getVillagers = (): Promise<Villagers> => (
-  fetch(ENDPOINT, {
-    headers: {'X-API-KEY': API_KEY}
-  }).then(response => response.json())
+  axios.get(ENDPOINT, {
+    headers: {
+      'X-API-KEY': API_KEY
+    },
+    params: {
+      thumbsize: 100
+    }
+  }).then(response => response.data)
 )
