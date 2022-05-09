@@ -14,7 +14,21 @@
   box-shadow: 0 10px 15px var(--h-gray-900);
 }
 
-.villager-card__image {
-  max-width: 100%;
-  height: 100%;
+/* Responsive square "hack" */
+/* https://dev.to/tchaflich/a-width-responsive-perfect-square-in-pure-css-3dao */
+.villager-card__square-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
 }
+.villager-card__square {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  /* center content  */
+  display: flex;
+  justify-content: center;
+}
+

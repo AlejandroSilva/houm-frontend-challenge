@@ -11,7 +11,11 @@ export const VillagerCard: FC<VillagerCardProps> = ({ classname, name, imageUrl 
   <div className={cn('villager-card', classname)}>
     <div className='villager-card__content'>
       {name}
-      <img className='villager-card__image' src={imageUrl} alt=''/>
+      <div className='villager-card__square-wrapper'>
+        <div className='villager-card__square'>
+          <img className='villager-card__image' src={imageUrl} alt=''/>
+        </div>
+      </div>
     </div>
   </div>
 )
