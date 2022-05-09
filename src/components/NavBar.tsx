@@ -1,24 +1,26 @@
 import { FC } from 'react'
 import { useForm } from "react-hook-form"
 
-import { defaultFilters, NookpediaFilters, useAppContext } from '../utils/appContext'
+import { PERSONALITY_COLOR, SPECIES_COLOR } from '../utils/constants'
+import { NookpediaFilters, useAppContext } from '../utils/appContext'
 import { Chip } from './Chip'
-import { SPECIES_COLOR } from '../utils/constants'
 
 export const NavBar: FC = () => {
-  const { filters, filterBy, removeSpecies } = useAppContext()
-  const { register, handleSubmit, reset } = useForm<NookpediaFilters>({
+  const { filters, filterBy, removeSpecies, removePersonality, resetFilters } = useAppContext()
+  const species = filters.species
+  const personality = filters.personality
+
+  const { register, handleSubmit, reset: resetForm } = useForm<NookpediaFilters>({
     defaultValues: filters
   })
   const onSubmit = (formData: NookpediaFilters) => {
     filterBy(formData)
   }
-  // reset form data + reset AppContext filters
+
   const onReset = () => {
-    reset()
-    filterBy(defaultFilters)
+    resetForm()
+    resetFilters()
   }
-  const species = filters.species
 
   return (
     <header className='navbar'>
@@ -38,10 +40,17 @@ export const NavBar: FC = () => {
           {species && (
             <div>
               Especie:
-              <Chip color={SPECIES_COLOR[species]}
-                    onClick={removeSpecies}
-              >
+              <Chip color={SPECIES_COLOR[species]} onClick={removeSpecies}>
                 {species}
+              </Chip>
+            </div>
+          )}
+          {/* show the selected species */}
+          {species && (
+            <div>
+              Personalidad:
+              <Chip color={PERSONALITY_COLOR[personality]} onClick={removePersonality}>
+                {personality}
               </Chip>
             </div>
           )}

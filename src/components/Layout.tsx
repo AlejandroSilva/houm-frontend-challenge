@@ -16,8 +16,17 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
   const filterBySpecies = useCallback((species: string) => {
     setFilters(filters => ({ ...filters, species}))
   }, [])
+  const filterByPersonality = useCallback((personality: string) => {
+    setFilters(filters => ({ ...filters, personality}))
+  }, [])
   const removeSpecies = useCallback(() => {
     setFilters(filters => ({ ...filters, species: defaultFilters.species }))
+  }, [])
+  const removePersonality = useCallback(() => {
+    setFilters(filters => ({ ...filters, personality: defaultFilters.personality }))
+  }, [])
+  const resetFilters = useCallback(() => {
+    setFilters(defaultFilters)
   }, [])
 
   return (
@@ -26,7 +35,10 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
         filters,
         filterBy,
         filterBySpecies,
+        filterByPersonality,
         removeSpecies,
+        removePersonality,
+        resetFilters
       }}>
         <NavBar />
         <main className='layout__content'>

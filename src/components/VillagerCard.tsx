@@ -20,7 +20,7 @@ interface VillagerCardProps {
 
 export const VillagerCard: FC<VillagerCardProps> = (props) => {
   const { classname, name, imageUrl, specie, gender, personality, quote, birthdayDay, birthdayMonth, sign } = props
-  const { filterBySpecies } = useAppContext()
+  const { filterBySpecies, filterByPersonality } = useAppContext()
 
   return (
     <div className={cn('villager-card', classname)}>
@@ -39,10 +39,10 @@ export const VillagerCard: FC<VillagerCardProps> = (props) => {
           </div>
           <div className='villager-card__separator' />
           <div>
-            <Chip color={PERSONALITY_COLOR[personality]}>{personality}</Chip>
-            <Chip color={SPECIES_COLOR[specie]}
-                  onClick={filterBySpecies.bind(null, specie)}
-            >
+            <Chip color={PERSONALITY_COLOR[personality]} onClick={filterByPersonality.bind(null, personality)}>
+              {personality}
+            </Chip>
+            <Chip color={SPECIES_COLOR[specie]} onClick={filterBySpecies.bind(null, specie)}>
               {specie}
             </Chip>
             <Chip color={GENDER_COLOR[gender]}>{gender}</Chip>
