@@ -1,0 +1,20 @@
+.villager-card {
+  padding: .5rem .25rem;
+  box-sizing: border-box;
+}
+
+.villager-card__content {
+  border: 1px solid var(--h-gray);
+  border-radius: .75rem;
+  box-shadow: 0 5px 10px var(--h-gray);
+  transition: all;
+  transition-duration: 150ms;
+}
+.villager-card:hover .villager-card__content{
+  box-shadow: 0 10px 15px var(--h-gray-900);
+}
+
+.villager-card__image {
+  max-width: 100%;
+  height: 100%;
+}

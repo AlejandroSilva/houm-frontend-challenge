@@ -1,0 +1,7 @@
+.villagers-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.villagers-item {
+    width: calc(100%/4);
+}

@@ -27,14 +27,18 @@ export const Villagers: FC = () => {
           <p>intenta con cambiando los filtros de busqueda</p>
         </InfoBox>
       )}
-      {status==='DONE' && (
-        data.map((villager, i) => (
-          <div className='red' key={i} style={{ width: '5rem', height: '5rem'}}>
-            {villager.name}
-            <img src={villager.image_url} alt='' style={{height: '100%'}}/>
-          </div>
-        ))
-      )}
+      {status==='DONE' &&
+        <div className='villagers-list'>
+          {data.map((villager, i) => (
+            <VillagerCard
+              classname='villagers-item'
+              key={i}
+              name={villager.name}
+              imageUrl={villager.image_url}
+            />
+          ))}
+        </div>
+      }
       {status==='ERROR' && (
         <p>an error</p>
       )}

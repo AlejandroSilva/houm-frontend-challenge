@@ -3,15 +3,19 @@
 body {
   margin: 0;
   font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  /* Houm Palette */
+  --h-white: #FFFFFF;
+  --h-primary: #FF452B;
+  /* bg */
+  --h-gray-50: #F7F8FC;
+  --h-gray: #BDBDBD;
+  --h-gray-900: #9E9E9E;
+  /* font */
+  --h-font: #212121;
 }
 
 /* Utils */
