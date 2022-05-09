@@ -3,6 +3,8 @@ import { FC, useEffect } from 'react'
 import { usePromise } from '../utils/hooks/usePromise'
 import { getVillagers } from '../api/nookpedia'
 import { InfoBox } from './InfoBox'
+import { VillagerCard } from './VillagerCard'
+import { Spinner } from './Spinner'
 
 export const Villagers: FC = () => {
   const { data, error, status, fetch: fetchAllVillagers } = usePromise(getVillagers)
@@ -16,6 +18,7 @@ export const Villagers: FC = () => {
       {status==='PENDING' && (
         <InfoBox>
           <h1>Buscando...</h1>
+          <Spinner />
         </InfoBox>
       )}
       {status==='DONE' && data.length===0 && (
