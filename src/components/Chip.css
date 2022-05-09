@@ -14,3 +14,7 @@ the style property when needed.
 .chip:hover {
   filter: brightness(.95);
 }
+
+.chip--clickeable {
+  cursor: pointer;
+}

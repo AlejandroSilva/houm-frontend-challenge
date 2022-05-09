@@ -8,14 +8,25 @@ interface LayoutProps {
 }
 
 export const Layout: FC<LayoutProps> = ({ children }) => {
+  // I do my best to memoize the helper's references
   const [filters, setFilters] = useState<NookpediaFilters>(defaultFilters)
-  const filterBy = useCallback((filters: NookpediaFilters) => setFilters(filters), [])
+  const filterBy = useCallback((newFilters: NookpediaFilters) => {
+    setFilters(newFilters)
+  }, [])
+  const filterBySpecies = useCallback((species: string) => {
+    setFilters(filters => ({ ...filters, species}))
+  }, [])
+  const removeSpecies = useCallback(() => {
+    setFilters(filters => ({ ...filters, species: defaultFilters.species }))
+  }, [])
 
   return (
     <div className='layout'>
       <AppContext.Provider value={{
         filters,
         filterBy,
+        filterBySpecies,
+        removeSpecies,
       }}>
         <NavBar />
         <main className='layout__content'>

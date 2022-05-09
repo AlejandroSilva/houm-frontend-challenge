@@ -2,11 +2,14 @@ import { FC } from 'react'
 import { useForm } from "react-hook-form"
 
 import { defaultFilters, NookpediaFilters, useAppContext } from '../utils/appContext'
+import { Chip } from './Chip'
+import { SPECIES_COLOR } from '../utils/constants'
 
 export const NavBar: FC = () => {
-  const { register, handleSubmit, reset } = useForm<NookpediaFilters>()
-  const { filterBy } = useAppContext()
-
+  const { filters, filterBy, removeSpecies } = useAppContext()
+  const { register, handleSubmit, reset } = useForm<NookpediaFilters>({
+    defaultValues: filters
+  })
   const onSubmit = (formData: NookpediaFilters) => {
     filterBy(formData)
   }
@@ -15,6 +18,7 @@ export const NavBar: FC = () => {
     reset()
     filterBy(defaultFilters)
   }
+  const species = filters.species
 
   return (
     <header className='navbar'>
@@ -30,6 +34,18 @@ export const NavBar: FC = () => {
                  type='submit'
                  value='Buscar'
           />
+          {/* show the selected species */}
+          {species && (
+            <div>
+              Especie:
+              <Chip color={SPECIES_COLOR[species]}
+                    onClick={removeSpecies}
+              >
+                {species}
+              </Chip>
+            </div>
+          )}
+
           <input className='round-button round-button--no-border'
                  type='button'
                  value='Borrar'

@@ -1,7 +1,9 @@
 import { FC } from 'react'
 import cn from 'classnames'
+
 import { Chip } from './Chip'
 import { GENDER_COLOR, PERSONALITY_COLOR, SPECIES_COLOR } from '../utils/constants'
+import { useAppContext } from '../utils/appContext'
 
 interface VillagerCardProps {
   classname?: string
@@ -18,6 +20,8 @@ interface VillagerCardProps {
 
 export const VillagerCard: FC<VillagerCardProps> = (props) => {
   const { classname, name, imageUrl, specie, gender, personality, quote, birthdayDay, birthdayMonth, sign } = props
+  const { filterBySpecies } = useAppContext()
+
   return (
     <div className={cn('villager-card', classname)}>
       <div className='villager-card__content'>
@@ -36,7 +40,11 @@ export const VillagerCard: FC<VillagerCardProps> = (props) => {
           <div className='villager-card__separator' />
           <div>
             <Chip color={PERSONALITY_COLOR[personality]}>{personality}</Chip>
-            <Chip color={SPECIES_COLOR[specie]}>{specie}</Chip>
+            <Chip color={SPECIES_COLOR[specie]}
+                  onClick={filterBySpecies.bind(null, specie)}
+            >
+              {specie}
+            </Chip>
             <Chip color={GENDER_COLOR[gender]}>{gender}</Chip>
           </div>
           {quote && (
