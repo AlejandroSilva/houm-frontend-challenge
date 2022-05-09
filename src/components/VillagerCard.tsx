@@ -11,10 +11,13 @@ interface VillagerCardProps {
   gender: string
   personality: string
   quote?: string
+  birthdayDay: string
+  birthdayMonth: string
+  sign: string
 }
 
 export const VillagerCard: FC<VillagerCardProps> = (props) => {
-  const { classname, name, imageUrl, specie, gender, personality, quote } = props
+  const { classname, name, imageUrl, specie, gender, personality, quote, birthdayDay, birthdayMonth, sign } = props
   return (
     <div className={cn('villager-card', classname)}>
       <div className='villager-card__content'>
@@ -28,13 +31,17 @@ export const VillagerCard: FC<VillagerCardProps> = (props) => {
             {name}
           </h3>
           <div>
+            {birthdayDay} {birthdayMonth} - <strong>{sign}</strong>
+          </div>
+          <div className='villager-card__separator' />
+          <div>
             <Chip color={PERSONALITY_COLOR[personality]}>{personality}</Chip>
             <Chip color={SPECIES_COLOR[specie]}>{specie}</Chip>
             <Chip color={GENDER_COLOR[gender]}>{gender}</Chip>
           </div>
           {quote && (
             <>
-              <span className='villager-card__separator' />
+              <div className='villager-card__separator' />
               <div className='villager-card__quote'>{quote}</div>
             </>
           )}

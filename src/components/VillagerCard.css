@@ -43,6 +43,8 @@
 }
 
 .villager-card__footer {
+  display: flex;
+  flex-direction: column;
   padding: 0 .5rem .5rem;
 }
 
@@ -56,8 +58,8 @@
   display: inline-block;
   width: 100%;
   height: 1px;
-  background-color: var(--h-gray-900);
-  margin: 0;
+  background-color: var(--h-gray-100);
+  margin: .5rem 0;
 }
 .villager-card__quote {
   font-style: italic;

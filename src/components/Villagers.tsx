@@ -39,6 +39,9 @@ export const Villagers: FC = () => {
               gender={villager.gender}
               personality={villager.personality}
               quote={villager.quote}
+              birthdayDay={villager.birthday_day}
+              birthdayMonth={villager.birthday_month}
+              sign={villager.sign}
             />
           ))}
         </div>

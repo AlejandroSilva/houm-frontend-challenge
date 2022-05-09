@@ -12,6 +12,9 @@ export type Villager = {
   species: string
   personality: string
   quote?: string
+  birthday_day: string
+  birthday_month: string
+  sign: string
 }
 
 export type Villagers = Array<Villager>
