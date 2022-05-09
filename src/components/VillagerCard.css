@@ -4,6 +4,7 @@
 }
 
 .villager-card__content {
+  background: white;
   border: 1px solid var(--h-gray);
   border-radius: .75rem;
   box-shadow: 0 5px 10px var(--h-gray);
