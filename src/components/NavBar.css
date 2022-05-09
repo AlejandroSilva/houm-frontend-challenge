@@ -4,4 +4,10 @@
   box-shadow: rgb(38 50 56 / 15%) 0 4px 15px;
 }
 
-.navbar__logo {}
+.navbar__form {
+  display: flex;
+  align-items: center;
+}
+.navbar__form > * {
+  margin-right: .5rem;
+}

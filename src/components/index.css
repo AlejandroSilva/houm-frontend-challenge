@@ -1,7 +1,9 @@
 @import "./Chip.css";
+@import "./InfoBox.css";
 @import "./Layout.css";
 @import "./NavBar.css";
-@import "./InfoBox.css";
+@import "./RoundButton.css";
 @import "./Spinner.css";
+@import "./TextInput.css";
 @import "./VillagerCard.css";
 @import "./Villagers.css";

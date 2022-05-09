@@ -11,3 +11,6 @@ the style property when needed.
   padding: .25rem .5rem;
   font-size: .75rem;
 }
+.chip:hover {
+  filter: brightness(.95);
+}

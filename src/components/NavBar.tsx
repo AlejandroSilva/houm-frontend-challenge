@@ -18,13 +18,23 @@ export const NavBar: FC = () => {
 
   return (
     <header className='navbar'>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className='container'>
+        <form className='navbar__form container'
+              onSubmit={handleSubmit(onSubmit)}
+        >
           <img className='navbar__logo' src='https://houm.com/static/brandImage/houmLogo.svg' alt='Houm logo'/>
-          <input {...register('name')} />
-          <input type='submit' value='Buscar' />
-          <input type='button' value='X' onClick={onReset}/>
-        </div>
+          <input className='text-input'
+                 {...register('name')}
+                 placeholder='Buscar por nombre'
+          />
+          <input className='round-button round-button--primary'
+                 type='submit'
+                 value='Buscar'
+          />
+          <input className='round-button round-button--no-border'
+                 type='button'
+                 value='Borrar'
+                 onClick={onReset}
+          />
       </form>
     </header>
   )

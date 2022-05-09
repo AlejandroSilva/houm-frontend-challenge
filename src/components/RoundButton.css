@@ -1,0 +1,25 @@
+.round-button {
+    font-size: 1rem;
+    border-width: 2px;
+    border-radius: 1rem;
+    border-color: var(--h-gray);
+    border-style: solid;
+    background-color: var(--h-gray-50);
+    height: 100%;
+    padding: .5rem;
+}
+.round-button:hover {
+    /* make it a little darker on hover */
+    filter: brightness(.95);
+}
+
+.round-button--primary {
+    color: var(--h-gray-100);
+    border-color: var(--h-primary);
+    background-color: var(--h-primary);
+}
+
+.round-button--no-border {
+    border-color: var(--h-gray-50);
+    background-color: var(--h-gray-50);
+}
