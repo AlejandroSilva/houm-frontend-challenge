@@ -46,7 +46,7 @@ export const NavBar: FC = () => {
             </div>
           )}
           {/* show the selected species */}
-          {species && (
+          {personality && (
             <div>
               Personalidad:
               <Chip color={PERSONALITY_COLOR[personality]} onClick={removePersonality}>
