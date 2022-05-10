@@ -47,8 +47,8 @@ The "production" site is hosted on [https://houm-frontend-challenge-alejandrosil
 
 # Screenshots
 
-All the Villagers availables
-![All the Villagers availables](https://user-images.githubusercontent.com/569481/167540544-6006d0fe-179d-498d-b803-fb201a73bfc2.png)
+All the Characters availables
+![All the Characters availables](https://user-images.githubusercontent.com/569481/167540544-6006d0fe-179d-498d-b803-fb201a73bfc2.png)
 
-Villagers filtered by Personality and Specie
-![Villagers filtered by Personality and Specie](https://user-images.githubusercontent.com/569481/167540535-675e81c1-d3d1-4820-a96d-2c9e5df8de51.png)
+Characters filtered by Personality and Specie
+![Characters filtered by Personality and Specie](https://user-images.githubusercontent.com/569481/167540535-675e81c1-d3d1-4820-a96d-2c9e5df8de51.png)

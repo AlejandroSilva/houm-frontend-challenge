@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { useForm } from "react-hook-form"
 
-import { PERSONALITY_COLOR, SPECIES_COLOR } from '../utils/constants'
+import { SPECIES_COLOR } from '../utils/constants'
 import { NookpediaFilters, useAppContext } from '../utils/appContext'
 import { Chip } from './Chip'
 
@@ -42,15 +42,6 @@ export const NavBar: FC = () => {
               Especie:
               <Chip color={SPECIES_COLOR[species]} onClick={removeSpecies}>
                 {species}
-              </Chip>
-            </div>
-          )}
-          {/* show the selected species */}
-          {personality && (
-            <div>
-              Personalidad:
-              <Chip color={PERSONALITY_COLOR[personality]} onClick={removePersonality}>
-                {personality}
               </Chip>
             </div>
           )}

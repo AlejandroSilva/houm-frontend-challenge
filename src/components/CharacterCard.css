@@ -1,28 +1,30 @@
-.villager-card {
+.character-card {
   padding: .5rem .25rem;
   box-sizing: border-box;
 }
 
-.villager-card__content {
+.character-card__content {
   background: white;
   border: 1px solid var(--h-gray);
   border-radius: .75rem;
   box-shadow: 0 5px 10px var(--h-gray);
   transition: all;
   transition-duration: 150ms;
+  overflow: hidden;
 }
-.villager-card:hover .villager-card__content {
+.character-card:hover .character-card__content {
   box-shadow: 0 10px 15px var(--h-gray-900);
 }
 
 /* Responsive square "hack" to keep a aspect-ratio */
 /* https://dev.to/tchaflich/a-width-responsive-perfect-square-in-pure-css-3dao */
-.villager-card__square-wrapper {
+.character-card__square-wrapper {
   position: relative;
   width: 100%;
   padding-bottom: 100%;
+  overflow: hidden;
 }
-.villager-card__square {
+.character-card__square {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -33,41 +35,31 @@
   justify-content: center;
 }
 
-.villager-card__image {
-  transform: scale(.95);
+.character-card__image {
+  transform: scale(1);
   transition: all;
   transition-duration: 150ms;
 }
-.villager-card:hover .villager-card__image {
-  transform: scale(1);
+.character-card:hover .character-card__image {
+  transform: scale(1.1);
 }
 
-.villager-card__footer {
+.character-card__footer {
   display: flex;
   flex-direction: column;
   padding: 0 .5rem .5rem;
 }
 
-.villager-card__name {
+.character-card__name {
   font-weight: bold;
   margin: 0;
   color: var(--h-primary);
 }
 
-.villager-card__separator {
+.character-card__separator {
   display: inline-block;
   width: 100%;
   height: 1px;
   background-color: var(--h-gray-100);
   margin: .5rem 0;
-}
-.villager-card__quote {
-  font-style: italic;
-  color: var(--h-gray-900)
-}
-.villager-card__quote::before {
-  content: '"'
-}
-.villager-card__quote::after {
-  content: '"'
 }

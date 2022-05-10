@@ -2,19 +2,20 @@ import { FC, useEffect } from 'react'
 
 import { useAppContext } from '../utils/appContext'
 import { usePromise } from '../utils/hooks/usePromise'
-import { getVillagers } from '../api/nookpedia'
+import { getCharacters } from '../api/rickandmorty'
 import { InfoBox } from './InfoBox'
-import { VillagerCard } from './VillagerCard'
+import { CharacterCard } from './CharacterCard'
 import { Spinner } from './Spinner'
 
-export const Villagers: FC = () => {
-  const { filters } = useAppContext()
-  const { data, error, status, fetch: fetchAllVillagers } = usePromise(getVillagers)
+export const Characters: FC = () => {
+  // const { filters } = useAppContext()
+  const filters = 1
+  const { data, error, status, fetch: fetchCharacters } = usePromise(getCharacters)
 
   // When the filters of AppContext change, then a new Api request is made
   useEffect(() => {
     console.log('useEffect', filters)
-    fetchAllVillagers(filters)
+    fetchCharacters(filters)
   }, [filters])
 
   return (
@@ -25,27 +26,26 @@ export const Villagers: FC = () => {
           <Spinner />
         </InfoBox>
       )}
-      {status==='DONE' && data.length===0 && (
+
+      {status==='DONE' && data.results.length===0 && (
         <InfoBox>
           <h1>¡Lo sentimos! No hay Aldeanos con esas características</h1>
           <p>Intenta con cambiando los filtros de busqueda</p>
         </InfoBox>
       )}
       {status==='DONE' &&
-        <div className='villagers-list'>
-          {data.map((villager, i) => (
-            <VillagerCard
-              classname='villagers-item'
+        <div className='characters-list'>
+          {data.results.map((character, i) => (
+            <CharacterCard
+              classname='characters-item'
               key={i}
-              name={villager.name}
-              imageUrl={villager.image_url}
-              specie={villager.species}
-              gender={villager.gender}
-              personality={villager.personality}
-              quote={villager.quote}
-              birthdayDay={villager.birthday_day}
-              birthdayMonth={villager.birthday_month}
-              sign={villager.sign}
+              name={character.name}
+              imageUrl={character.image}
+              specie={character.species}
+              type={character.type}
+              gender={character.gender}
+              status={character.status}
+              location={character.location?.name}
             />
           ))}
         </div>
