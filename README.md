@@ -4,19 +4,19 @@ This is a challenge to get a frontend developer at Houm.com, the challenge as to
 as "hero cards".
 
 To apply I use the [Rick And Morty API](https://rickandmortyapi.com/), a public APi with the character's information
-of the popular TV show. The list can be filtered by `name` (by the text field) and by `species` (clicking on the species
-chip on the character).
+of the popular TV show. The list can be filtered by `name` (by the text input on NavBar) and by `species` (clicking on 
+the species Chip on the character's card).
 
 ## Considerations on technical decisions:
-- [Typescript](https://www.typescriptlang.org/) definitions are lighted used, just enough to catch silly errors.
+- [Typescript](https://www.typescriptlang.org/) types are lighted used, just enough to catch silly errors.
 - [Vite](https://vitejs.dev/) as dev and build tool: quick and simple defaults.
-- [Vercel](https://vercel.com) as hosting provider. It's well integrated with vite, with a git push on `main` 
+- [Vercel](https://vercel.com) as hosting provider. It's well integrated with vite, with just a git push on `main` 
 the code is deployed.
 - No CSS framework or collection of components were used. As it was a very simple page.
 - The CSS Variables used are the same used by Houm.com, extracted using the [CSS Overview feature of Chrome](https://developer.chrome.com/docs/devtools/css-overview/).
 - The [BEM](http://getbem.com/) methodology was used as naming convention to keep the CSS in order.
 - React's [Context Api](https://es.reactjs.org/docs/context.html) is used on `AppContext` to keep a "global" state
-for the filters and current page to be fetched. This use can be considered too much as it's a pretty simple page with 
+for the filters and current page to be fetched. This use can be considered overhead as it's a pretty simple page with 
 just a few components. But was intended to prevent [Prop Drilling](https://kentcdodds.com/blog/prop-drilling) it the 
 code grows too much (lucky it wasn't the case). 
 

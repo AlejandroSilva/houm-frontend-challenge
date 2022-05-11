@@ -50,3 +50,9 @@
 .navbar__github img {
   height: 100%;
 }
+
+@media (max-width: 640px) {
+  .navbar__github {
+    display: none;
+  }
+}
