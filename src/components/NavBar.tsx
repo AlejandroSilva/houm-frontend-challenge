@@ -51,12 +51,9 @@ export const NavBar: FC = () => {
 
           {/* show the selected species */}
           {species && (
-            <div>
-              Species:
-              <Chip color={SPECIES_COLOR[species]} onClick={removeSpecies}>
-                {species}
-              </Chip>
-            </div>
+            <Chip color={SPECIES_COLOR[species]} onClick={removeSpecies}>
+              {species}
+            </Chip>
           )}
 
           <button className='round-button navbar__cancel-button' type='button' onClick={onReset}>

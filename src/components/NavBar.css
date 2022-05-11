@@ -37,6 +37,7 @@
 
 .navbar__filters {
   display: flex;
+  align-items: center;
 }
 .navbar__filters > * {
   margin-right: .5rem;
