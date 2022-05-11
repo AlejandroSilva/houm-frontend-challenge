@@ -1,24 +1,24 @@
-.characters-list {
+.characters__list {
     display: flex;
     flex-wrap: wrap;
 }
 
-.characters-item {
+.characters__item {
     width: calc(100%/2);
 }
 
 @media (min-width: 640px) {
-    .characters-item {
+    .characters__item {
         width: calc(100%/3);
     }
 }
 @media (min-width: 768px) {
-    .characters-item {
+    .characters__item {
         width: calc(100%/4);
     }
 }
 @media (min-width: 1024px) {
-    .characters-item {
+    .characters__item {
         width: calc(100%/5);
     }
 }

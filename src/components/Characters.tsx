@@ -34,11 +34,11 @@ export const Characters: FC = () => {
         </InfoBox>
       )}
       {status==='DONE' &&
-        <div className='characters-list'>
+        <div className='characters__list'>
           {data.results.map((character, i) => (
             <CharacterCard
-              classname='characters-item'
               key={i}
+              classname='characters__item'
               name={character.name}
               imageUrl={character.image}
               specie={character.species}
