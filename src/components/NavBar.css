@@ -4,14 +4,32 @@
   box-shadow: rgb(38 50 56 / 15%) 0 4px 15px;
 }
 
+.navbar__logo {
+  height: 2.5rem;
+  padding-right: 2rem;
+}
+.navbar__logo img {
+  height: 100%;
+}
+
 .navbar__form {
   display: flex;
+  flex-wrap: wrap; /* filters on other row for small screens */
   align-items: center;
+  justify-content: space-between;
 }
-.navbar__form > * {
+
+.navbar__filters {
+  display: flex;
+}
+.navbar__filters > * {
   margin-right: .5rem;
 }
 
-.navbar__species-chip {
-
+.navbar__github {
+  margin-left: 1rem;
+  height: 2rem;
+}
+.navbar__github img {
+  height: 100%;
 }

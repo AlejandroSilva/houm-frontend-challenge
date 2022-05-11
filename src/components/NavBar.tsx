@@ -27,10 +27,18 @@ export const NavBar: FC = () => {
 
   return (
     <header className='navbar'>
-        <form className='navbar__form container'
-              onSubmit={handleSubmit(onSubmit)}
+      <form className='navbar__form container'
+            onSubmit={handleSubmit(onSubmit)}
+      >
+        <a className='navbar__logo'
+           title='Houm Frontend Challenge'
+           href='/'
         >
-          <img className='navbar__logo' src='https://houm.com/static/brandImage/houmLogo.svg' alt='Houm logo'/>
+          {/*<img src='https://houm.com/static/brandImage/houmLogo.svg' alt='Houm logo'/>*/}
+          <img src='https://upload.wikimedia.org/wikipedia/commons/b/b1/Rick_and_Morty.svg' alt='Rick And Morty logo'/>
+        </a>
+
+        <div className='navbar__filters'>
           <input className='text-input'
                  {...register('name')}
                  placeholder='Buscar por nombre'
@@ -54,6 +62,16 @@ export const NavBar: FC = () => {
                  value='Borrar'
                  onClick={onReset}
           />
+
+          <a className='navbar__github'
+             title='GitHub repository'
+             href='https://github.com/AlejandroSilva/houm-frontend-challenge'
+             target='_blank'
+          >
+            <img className='' src='https://www.svgrepo.com/show/303615/github-icon-1-logo.svg' alt='github repository'/>
+          </a>
+
+        </div>
       </form>
     </header>
   )
