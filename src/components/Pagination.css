@@ -14,12 +14,14 @@
     height: 2.5rem;
     border-radius: 50%;
 }
-.pagination__button:disabled {
-    cursor: unset;
-}
 .pagination__button:hover {
     /* make it a little darker on hover */
     filter: brightness(.95);
+}
+.pagination__button:disabled {
+    color: var(--h-gray-900);
+    filter: unset;
+    cursor: unset;
 }
 
 .pagination__button--active {
@@ -35,5 +37,3 @@
 .pagination__button--gap:hover {
     filter: unset;
 }
-
-.pagination--loading {}

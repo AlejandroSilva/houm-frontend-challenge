@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import { FC, useEffect, useState } from 'react'
 
 import { useAppContext } from '../utils/appContext'
 import { usePromise } from '../utils/hooks/usePromise'
@@ -10,14 +10,16 @@ import { Pagination } from './Pagination'
 
 export const Characters: FC = () => {
   // const { filters } = useAppContext()
-  const filters = 1
+  const [currentPage, setCurrentPage] = useState(1)
   const { data, error, status, fetch: fetchCharacters } = usePromise(getCharacters)
+  const characters = data?.results || []
+  const totalPages = data?.info.pages
 
   // When the filters of AppContext change, then a new Api request is made
   useEffect(() => {
-    console.log('useEffect', filters)
-    fetchCharacters(filters)
-  }, [filters])
+    console.log('useEffect', currentPage)
+    fetchCharacters(currentPage)
+  }, [currentPage])
 
   return (
     <section className='container'>
@@ -28,7 +30,7 @@ export const Characters: FC = () => {
         </InfoBox>
       )}
 
-      {status==='DONE' && data.results.length===0 && (
+      {status==='DONE' && characters.length===0 && (
         <InfoBox>
           <h1>¡Lo sentimos! No hay Aldeanos con esas características</h1>
           <p>Intenta con cambiando los filtros de busqueda</p>
@@ -36,7 +38,7 @@ export const Characters: FC = () => {
       )}
       {status==='DONE' &&
         <div className='characters__list'>
-          {data.results.map((character, i) => (
+          {characters.map((character, i) => (
             <CharacterCard
               key={i}
               classname='characters__item'
@@ -51,10 +53,9 @@ export const Characters: FC = () => {
           ))}
           <div className='characters__pagination'>
             <Pagination
-              loading={false}
-              currentPage={filters}
-              totalPages={42}
-              onPageSelect={() => {}}
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageSelect={setCurrentPage}
             />
           </div>
         </div>
