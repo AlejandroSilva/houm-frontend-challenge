@@ -42,8 +42,8 @@ The "production" site is hosted on [https://houm-frontend-challenge-alejandrosil
 - [i want hue](https://medialab.github.io/iwanthue/) "colors for data scientists" a color palette generator for large datasets.
 
 # Screenshots
-![All the Characters availables](https://user-images.githubusercontent.com/569481/167825195-b47459a7-23f3-4311-aaf6-d2646fc8bf99.png)
 All the Characters available.
+![All the Characters availables](https://user-images.githubusercontent.com/569481/167825195-b47459a7-23f3-4311-aaf6-d2646fc8bf99.png)
 
-![Characters filtered by Personality and Specie](https://user-images.githubusercontent.com/569481/167826768-7581e201-b152-4abf-9e94-b8ac119ed29c.png)
 Characters filtered by `Specie` and `Name`.
+![Characters filtered by Personality and Specie](https://user-images.githubusercontent.com/569481/167826768-7581e201-b152-4abf-9e94-b8ac119ed29c.png)
