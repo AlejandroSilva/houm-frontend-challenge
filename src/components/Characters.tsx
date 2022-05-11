@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, useEffect } from 'react'
 
 import { useAppContext } from '../utils/appContext'
 import { usePromise } from '../utils/hooks/usePromise'
@@ -9,17 +9,16 @@ import { Spinner } from './Spinner'
 import { Pagination } from './Pagination'
 
 export const Characters: FC = () => {
-  // const { filters } = useAppContext()
-  const [currentPage, setCurrentPage] = useState(1)
+  const { filters, changePage } = useAppContext()
+  const currentPage = filters.page
   const { data, error, status, fetch: fetchCharacters } = usePromise(getCharacters)
   const characters = data?.results || []
   const totalPages = data?.info.pages
 
   // When the filters of AppContext change, then a new Api request is made
   useEffect(() => {
-    console.log('useEffect', currentPage)
-    fetchCharacters(currentPage)
-  }, [currentPage])
+    fetchCharacters(filters)
+  }, [filters])
 
   return (
     <section className='container'>
@@ -55,7 +54,7 @@ export const Characters: FC = () => {
             <Pagination
               currentPage={currentPage}
               totalPages={totalPages}
-              onPageSelect={setCurrentPage}
+              onPageSelect={changePage}
             />
           </div>
         </div>

@@ -17,7 +17,7 @@ export type Character = {
   }
 }
 
-type GetCharacters = {
+type CharactersResponse = {
   info: {
     count: number
     pages: number
@@ -26,9 +26,14 @@ type GetCharacters = {
   }
   results: Array<Character> | []
 }
+export type CharactersFilter = {
+  name: string
+  species: string
+  page: number
+}
 
-export const getCharacters = (page: number = 1): Promise<GetCharacters> => {
+export const getCharacters = (filters: CharactersFilter): Promise<CharactersResponse> => {
   return axios.get(`${BASE_PATH}/character`, {
-    params: { page }
+    params: filters
   }).then(response => response.data)
 }

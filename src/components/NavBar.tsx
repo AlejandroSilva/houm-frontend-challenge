@@ -2,19 +2,22 @@ import { FC } from 'react'
 import { useForm } from "react-hook-form"
 
 import { SPECIES_COLOR } from '../utils/constants'
-import { NookpediaFilters, useAppContext } from '../utils/appContext'
+import { useAppContext } from '../utils/appContext'
 import { Chip } from './Chip'
 
-export const NavBar: FC = () => {
-  const { filters, filterBy, removeSpecies, removePersonality, resetFilters } = useAppContext()
-  const species = filters.species
-  const personality = filters.personality
+type FormValues = {
+  name: string
+}
 
-  const { register, handleSubmit, reset: resetForm } = useForm<NookpediaFilters>({
+export const NavBar: FC = () => {
+  const { filters, filterByName, removeSpecies, resetFilters } = useAppContext()
+  const species = filters.species
+
+  const { register, handleSubmit, reset: resetForm } = useForm<FormValues>({
     defaultValues: filters
   })
-  const onSubmit = (formData: NookpediaFilters) => {
-    filterBy(formData)
+  const onSubmit = (formData: FormValues) => {
+    filterByName(formData.name)
   }
 
   const onReset = () => {

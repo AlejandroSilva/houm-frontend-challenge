@@ -18,7 +18,7 @@ interface VillagerCardProps {
 
 export const CharacterCard: FC<VillagerCardProps> = (props) => {
   const { classname, name, imageUrl, specie, type, gender, status, location} = props
-  const { filterBySpecies, filterByPersonality } = useAppContext()
+  const { filterBySpecies } = useAppContext()
 
   return (
     <div className={cn('character-card', classname)}>

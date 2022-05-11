@@ -1,25 +1,20 @@
 import { createContext, useContext } from 'react'
 
-export type NookpediaFilters = {
-  name: string
-  species: string
-  personality: string
-}
+import { CharactersFilter } from '../api/rickandmorty'
 
 type AppContent = {
-  filters: NookpediaFilters
-  filterBy: (filters: NookpediaFilters) => void
+  filters: CharactersFilter
+  filterByName: (name: string) => void
   filterBySpecies: (species: string) => void
-  filterByPersonality: (personality: string) => void
+  changePage: (page: number) => void
   removeSpecies: () => void
-  removePersonality: () => void
   resetFilters: () => void
 }
 
-export const defaultFilters: NookpediaFilters = {
+export const defaultFilters: CharactersFilter = {
   name: '',
   species: '',
-  personality: ''
+  page: 1
 }
 
 // @ts-ignore // we don't need to pass the default value as isn't used outside a Provider
