@@ -7,6 +7,14 @@
     width: calc(100%/2);
 }
 
+.characters__pagination {
+    width: 100%;
+    padding: 1.5rem 0;
+    /* set the Pagination at the right of the screen */
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 @media (min-width: 640px) {
     .characters__item {
         width: calc(100%/3);

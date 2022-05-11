@@ -1,0 +1,39 @@
+.pagination {}
+
+/* almost the same as .round-button, maybe an abstraction should be made? */
+.pagination__button {
+    color: var(--h-font);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    border-width: 2px;
+    border-color: var(--h-gray);
+    border-style: solid;
+    background-color: var(--h-gray-50);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+.pagination__button:disabled {
+    cursor: unset;
+}
+.pagination__button:hover {
+    /* make it a little darker on hover */
+    filter: brightness(.95);
+}
+
+.pagination__button--active {
+    color: var(--h-gray-100);
+    border-color: var(--h-primary);
+    background-color: var(--h-primary);
+}
+
+.pagination__button--gap {
+    border-color: var(--h-gray-50);
+    background-color: unset;
+}
+.pagination__button--gap:hover {
+    filter: unset;
+}
+
+.pagination--loading {}

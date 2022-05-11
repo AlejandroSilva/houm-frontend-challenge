@@ -6,6 +6,7 @@ import { getCharacters } from '../api/rickandmorty'
 import { InfoBox } from './InfoBox'
 import { CharacterCard } from './CharacterCard'
 import { Spinner } from './Spinner'
+import { Pagination } from './Pagination'
 
 export const Characters: FC = () => {
   // const { filters } = useAppContext()
@@ -48,6 +49,14 @@ export const Characters: FC = () => {
               location={character.location?.name}
             />
           ))}
+          <div className='characters__pagination'>
+            <Pagination
+              loading={false}
+              currentPage={filters}
+              totalPages={42}
+              onPageSelect={() => {}}
+            />
+          </div>
         </div>
       }
       {status==='ERROR' && (
