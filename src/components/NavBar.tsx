@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form"
 import { SPECIES_COLOR } from '../utils/constants'
 import { useAppContext } from '../utils/appContext'
 import { Chip } from './Chip'
+import { FindIcon, CancelIcon } from './svg'
 
 type FormValues = {
   name: string
@@ -39,29 +40,28 @@ export const NavBar: FC = () => {
         </a>
 
         <div className='navbar__filters'>
-          <input className='text-input'
+          <input className='round-text-input'
                  {...register('name')}
-                 placeholder='Buscar por nombre'
+                 placeholder='Filter by Name'
           />
-          <input className='round-button round-button--primary'
-                 type='submit'
-                 value='Buscar'
-          />
+
+          <button className='round-button navbar__submit-button' type='submit'>
+            <FindIcon />
+          </button>
+
           {/* show the selected species */}
           {species && (
             <div>
-              Especie:
+              Species:
               <Chip color={SPECIES_COLOR[species]} onClick={removeSpecies}>
                 {species}
               </Chip>
             </div>
           )}
 
-          <input className='round-button round-button--no-border'
-                 type='button'
-                 value='Borrar'
-                 onClick={onReset}
-          />
+          <button className='round-button navbar__cancel-button' type='button' onClick={onReset}>
+            <CancelIcon />
+          </button>
 
           <a className='navbar__github'
              title='GitHub repository'

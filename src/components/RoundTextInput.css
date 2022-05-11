@@ -1,4 +1,6 @@
-.text-input {
+.round-text-input {
+  box-sizing: border-box;
+  height: 2rem;
   color: var(--h-primary);
   font-size: 1rem;
   border-width: 2px;
@@ -6,13 +8,13 @@
   border-color: var(--h-gray);
   border-style: solid;
   background-color: var(--h-gray-50);
-  height: 100%;
-  padding: .5rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
 }
-.text-input:hover {
+.round-text-input:hover {
   background-color: var(--h-gray-100);
 }
-.text-input:focus {
+.round-text-input:focus {
   outline:none;
   background-color: var(--h-gray-100);
   border-color: var(--h-primary);

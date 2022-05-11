@@ -5,7 +5,7 @@
 }
 
 .navbar__logo {
-  height: 2.5rem;
+  height: 2rem;
   padding-right: 2rem;
 }
 .navbar__logo img {
@@ -17,6 +17,22 @@
   flex-wrap: wrap; /* filters on other row for small screens */
   align-items: center;
   justify-content: space-between;
+}
+
+.round-button.navbar__submit-button {
+  border-color: var(--h-primary);
+  padding: .2rem; /* magic number to not replace the svg */
+}
+.round-button.navbar__submit-button svg {
+  fill: var(--h-primary);
+  height: 100%;
+  width: 100%;
+}
+.round-button.navbar__cancel-button svg {
+  border-color: var(--h-gray-900);
+  fill: var(--h-primary);
+  height: 100%;
+  width: 100%;
 }
 
 .navbar__filters {

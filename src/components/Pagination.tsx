@@ -11,7 +11,7 @@ type PageButtonProps = {
   onClick: () => void
 }
 const PageButton: FC<PageButtonProps> = ({ content, active, disabled, onClick }) => (
-  <button className={cn('pagination__button', { 'pagination__button--active': active })}
+  <button className={cn('round-button pagination__button', { 'round-button--active': active })}
           disabled={disabled}
           onClick={onClick}
   >
@@ -20,7 +20,7 @@ const PageButton: FC<PageButtonProps> = ({ content, active, disabled, onClick })
 )
 
 const IntervalGap: FC = () => (
-  <button className='pagination__button pagination__button--gap' disabled>...</button>
+  <button className='round-button pagination__button pagination__button--gap' disabled>...</button>
 )
 
 type PaginateProps = {
