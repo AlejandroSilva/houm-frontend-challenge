@@ -1,22 +1,24 @@
 # Houm frontend challenge
 
-This is a challenge to get a frontend developer at Houm.com, the challenge as to fetch a public API and show the data as "hero cards".
+This is a challenge to get a frontend developer at Houm.com, the challenge as to fetch a public API and show the data
+as "hero cards".
 
-To apply I use a public API get the Villages of [Animal Crossing](https://animal-crossing.com/es/), a popular Nintendo Switch game.
-
-In the game you can invite 9 of 487 villagers available to your island, every one with his own personality, look, 
-likes, and background stories, this page is intended to show all the villagers and help to find the perfect ones for
-your island.
+To apply I use the [Rick And Morty API](https://rickandmortyapi.com/), a public APi with the character's information
+of the popular TV show. The list can be filtered by `name` (by the text field) and by `species` (clicking on the species
+chip on the character).
 
 ## Considerations on technical decisions:
-- [Typescript](https://www.typescriptlang.org/) definitions are lighted used.
+- [Typescript](https://www.typescriptlang.org/) definitions are lighted used, just enough to catch silly errors.
 - [Vite](https://vitejs.dev/) as dev and build tool: quick and simple defaults.
-- [Vercel](https://vercel.com) as hosting. Its well integrated with vite, with a git push on `main` the code is deployed.
+- [Vercel](https://vercel.com) as hosting provider. It's well integrated with vite, with a git push on `main` 
+the code is deployed.
 - No CSS framework or collection of components were used. As it was a very simple page.
 - The CSS Variables used are the same used by Houm.com, extracted using the [CSS Overview feature of Chrome](https://developer.chrome.com/docs/devtools/css-overview/).
 - The [BEM](http://getbem.com/) methodology was used as naming convention to keep the CSS in order.
-- Deep in the development I notice that the api takes soo much time when certain filters changes, sadly there's no time left 
-to find other public API, so please take it in consideration.
+- React's [Context Api](https://es.reactjs.org/docs/context.html) is used on `AppContext` to keep a "global" state
+for the filters and current page to be fetched. This use can be considered too much as it's a pretty simple page with 
+just a few components. But was intended to prevent [Prop Drilling](https://kentcdodds.com/blog/prop-drilling) it the 
+code grows too much (lucky it wasn't the case). 
 
 ## Local development
 ```bash
@@ -36,19 +38,12 @@ $ git push
 The "production" site is hosted on [https://houm-frontend-challenge-alejandrosilva.vercel.app](https://houm-frontend-challenge-alejandrosilva.vercel.app).
 
 ## Other useful tools and links
-- [Nookpedia](https://nookipedia.com/wiki/Main_Page) A community-driven wiki for Animal Crossing data. They were kindly enough to allow me to use his Api. 
+- [Rick And Morty API](https://rickandmortyapi.com/) A public API with canonical information of Rick And Morty TV show. 
 - [i want hue](https://medialab.github.io/iwanthue/) "colors for data scientists" a color palette generator for large datasets.
-- [color hex](https://www.color-hex.com/color-palettes/?page=1) a curated list of handpicked color palettes.
-
-
-# To-Do list
-[] make the NavBar responsibe
-[] the api return data in English, add i18n to the front-end to parse a few fields
 
 # Screenshots
+![All the Characters availables](https://user-images.githubusercontent.com/569481/167825195-b47459a7-23f3-4311-aaf6-d2646fc8bf99.png)
+All the Characters available.
 
-All the Characters availables
-![All the Characters availables](https://user-images.githubusercontent.com/569481/167540544-6006d0fe-179d-498d-b803-fb201a73bfc2.png)
-
-Characters filtered by Personality and Specie
-![Characters filtered by Personality and Specie](https://user-images.githubusercontent.com/569481/167540535-675e81c1-d3d1-4820-a96d-2c9e5df8de51.png)
+![Characters filtered by Personality and Specie](https://user-images.githubusercontent.com/569481/167826768-7581e201-b152-4abf-9e94-b8ac119ed29c.png)
+Characters filtered by `Specie` and `Name`.
