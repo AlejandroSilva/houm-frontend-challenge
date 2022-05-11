@@ -1,5 +1,11 @@
 type ColorsMap = { [k: string]: string}
 
+export const STATUS_COLOR: ColorsMap = {
+  'Alive': '#94c12b',
+  'Dead': '#ebb929',
+  'unknown': '#7ca5ec'
+}
+
 export const GENDER_COLOR: ColorsMap = {
   'Male': '#BDEDFE',
   'Female': '#FFc8DD',

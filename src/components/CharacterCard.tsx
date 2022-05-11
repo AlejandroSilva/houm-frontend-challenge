@@ -2,7 +2,7 @@ import { FC } from 'react'
 import cn from 'classnames'
 
 import { Chip } from './Chip'
-import { GENDER_COLOR, SPECIES_COLOR } from '../utils/constants'
+import { GENDER_COLOR, SPECIES_COLOR, STATUS_COLOR } from '../utils/constants'
 import { useAppContext } from '../utils/appContext'
 
 interface VillagerCardProps {
@@ -27,16 +27,16 @@ export const CharacterCard: FC<VillagerCardProps> = (props) => {
           <div className='character-card__square'>
             <img className='character-card__image' src={imageUrl} alt=''/>
           </div>
+          <Chip classname='character-card__status' color={STATUS_COLOR[status]}>
+            {status}
+          </Chip>
         </div>
         <div className='character-card__footer'>
           <h3 className='character-card__name'>
             {name}
           </h3>
           <div>
-            <strong>{status}</strong>
-          </div>
-          <div>
-            Last known location: <strong>{location}</strong>
+            <small>Last known location:</small> <strong>{location}</strong>
           </div>
           <div className='character-card__separator' />
           <div>
